@@ -7,7 +7,7 @@
                     </div>
                     <div class="col-sm-6">
                         <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Agregar Usuario</span></a>
-                        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons"></i> <span>Eiminar</span></a>
+                        <a href="mantenimiento.php?accion=EliminarSesion" class="btn btn-danger" data-toggle="modal"><i class="material-icons"></i> <span>Eliminar</span></a>
                     </div>
                 </div>
             </div>
@@ -22,36 +22,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Thomas Hardy</td>
-                        <td>thomashardy@mail.com</td>
-                        <td>89 Chiaroscuro Rd, Portland, USA</td>
-                        <td>(171) 555-2222</td>
-                        <td>
-                            <a href="#" class="edit"><i class="material-icons" >&#xE254;</i></a>
-                            <a href="#" class="delete"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dominique Perrier</td>
-                        <td>dominiqueperrier@mail.com</td>
-                        <td>Obere Str. 57, Berlin, Germany</td>
-                        <td>(313) 555-5735</td>
-                        <td>
-                            <a href="#" class="edit"><i class="material-icons" >&#xE254;</i></a>
-                            <a href="#" class="delete"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Maria Anders</td>
-                        <td>mariaanders@mail.com</td>
-                        <td>25, rue Lauriston, Paris, France</td>
-                        <td>(503) 555-9931</td>
-                        <td>
-                            <a href="#" class="edit"><i class="material-icons" >&#xE254;</i></a>
-                            <a href="#" class="delete"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
+                    <?php
+                        $lista = obtenerListaUsuarios();
+                        if(count($lista)>0){
+                            foreach ($lista as $indice => $usuario){?>
+                            <tr>
+                                <td><?php echo $usuario['nombre']?></td>
+                                <td><?php echo $usuario['correo']?></td>
+                                <td><?php echo $usuario['direccion']?></td>
+                                <td><?php echo $usuario['telefono']?></td>
+                                <td>
+                                    <a href="#" class="edit"><i class="material-icons" >&#xE254;</i></a>
+                                    <a href="#" class="delete"><i class="material-icons">&#xE872;</i></a>
+                                </td>
+                            </tr>
+                    <?php
+                            }
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>

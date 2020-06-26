@@ -1,7 +1,7 @@
 <div id="addEmployeeModal" class="modal fade">
        <div class="modal-dialog">
            <div class="modal-content">
-               <form>
+               <form action="mantenimiento.php" method="post">
                    <div class="modal-header">
                        <h4 class="modal-title">Agregar Usuario</h4>
                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -9,19 +9,19 @@
                    <div class="modal-body">
                        <div class="form-group">
                            <label>Nombre</label>
-                           <input type="text" class="form-control" required>
+                           <input name="nombre" type="text" class="form-control" required>
                        </div>
                        <div class="form-group">
                            <label>Correo</label>
-                           <input type="email" class="form-control" required>
+                           <input name="correo" type="email" class="form-control" required>
                        </div>
                        <div class="form-group">
                            <label>Dirección</label>
-                           <textarea class="form-control" required></textarea>
+                           <textarea name="direccion" class="form-control" required></textarea>
                        </div>
                        <div class="form-group">
                            <label>Teléfono</label>
-                           <input type="text" class="form-control" required>
+                           <input name="telefono" type="text" class="form-control" required>
                        </div>
                    </div>
                    <div class="modal-footer">
